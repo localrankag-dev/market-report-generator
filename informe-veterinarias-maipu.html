@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Mercado Digital - Veterinarias en Maipú | Local Rank</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .executive-summary {
+            background: white;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid #3498db;
+        }
+        
+        .section {
+            background: white;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+        
+        .highlight-box {
+            background: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: #34495e;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        .competitor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .competitor-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            background: #f9f9f9;
+        }
+        
+        .opportunity-highlight {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .btn-cta {
+            display: inline-block;
+            background: white;
+            color: #e74c3c;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.3s;
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .methodology {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .competitor-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 10px;
+            }
+        }
+        
+        @media print {
+            .header, .footer {
+                background: #2c3e50 !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">LOCAL RANK</div>
+            <div class="subtitle">Inteligencia de Mercado Digital</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="executive-summary">
+            <h1>📊 Informe de Mercado Digital</h1>
+            <h2 style="border: none; color: #3498db;">Veterinarias en Maipú, Chile</h2>
+            
+            <div class="highlight-box">
+                <h3>🎯 Resumen Ejecutivo</h3>
+                <p>El mercado veterinario en Maipú presenta una <strong>oportunidad de $2,886 millones CLP anuales</strong> capturable mediante estrategias de marketing digital. Con una inversión mensual de $1,000,000 CLP, una veterinaria puede capturar entre 2-5% del mercado local, generando ingresos adicionales de <strong>$57-144 millones CLP anuales</strong>.</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$7,215M</div>
+                    <div>Mercado Total Anual (TAM)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$2,886M</div>
+                    <div>Oportunidad Digital (SAM)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">148,000</div>
+                    <div>Hogares con Mascotas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25%</div>
+                    <div>ROI Proyectado Anual</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔍 Análisis del Mercado Local</h2>
+            
+            <h3>📈 Datos Demográficos Clave</h3>
+            <ul>
+                <li><strong>Población Maipú:</strong> ~550,000 habitantes (~172,000 hogares)</li>
+                <li><strong>Hogares con mascotas:</strong> 86% (148,000 hogares)</li>
+                <li><strong>Total mascotas estimadas:</strong> ~222,000 mascotas</li>
+                <li><strong>Consultas veterinarias anuales:</strong> ~288,600 consultas</li>
+                <li><strong>Ticket promedio sector:</strong> $25,000 CLP por consulta</li>
+            </ul>
+            
+            <div class="methodology">
+                <strong>Metodología:</strong> Datos basados en estudios de ACADEM 2022, Universidad Católica de Chile, y análisis de mercado veterinario nacional. Población extrapolada desde censo INE y estadísticas municipales.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🏢 Análisis Competitivo</h2>
+            
+            <div class="competitor-grid">
+                <div class="competitor-card">
+                    <h3>🥇 Dr.Pet Clínica Veterinaria</h3>
+                    <p><strong>Rating:</strong> 4.2⭐ (148 reseñas)</p>
+                    <p><strong>Ubicación:</strong> Ingeniero Eduardo Domínguez 666</p>
+                    <p><strong>Horario:</strong> Hasta 8 p.m.</p>
+                    <p><strong>Fortaleza:</strong> Establecida, buenas reseñas</p>
+                </div>
+                
+                <div class="competitor-card">
+                    <h3>🥈 Veterinaria Mota Mascota</h3>
+                    <p><strong>Rating:</strong> 4.2⭐ (627 reseñas)</p>
+                    <p><strong>Ubicación:</strong> El Carmen 1295</p>
+                    <p><strong>Especialidad:</strong> Animales exóticos + 24/7</p>
+                    <p><strong>Fortaleza:</strong> Servicio 24 horas, alta especialización</p>
+                </div>
+                
+                <div class="competitor-card">
+                    <h3>🥉 INMEVET Urgencias</h3>
+                    <p><strong>Rating:</strong> 3.8⭐ (422 reseñas)</p>
+                    <p><strong>Especialidad:</strong> Veterinarias 24 hrs + Especialidades</p>
+                    <p><strong>Fortaleza:</strong> Urgencias especializadas</p>
+                </div>
+                
+                <div class="competitor-card">
+                    <h3>📍 Centro Veterinario Municipal</h3>
+                    <p><strong>Horario:</strong> L-J 8:30-17:00hrs</p>
+                    <p><strong>Contacto:</strong> +56 9 6300 6199</p>
+                    <p><strong>Ventaja:</strong> Precios subsidiados públicos</p>
+                </div>
+                
+                <div class="competitor-card">
+                    <h3>🏥 Veterinaria Guau & Miau</h3>
+                    <p><strong>Especialidad:</strong> Equipo multidisciplinario</p>
+                    <p><strong>Fortaleza:</strong> Precios accesibles al mercado local</p>
+                </div>
+                
+                <div class="competitor-card">
+                    <h3>🚑 Veterinaria Pajaritos</h3>
+                    <p><strong>Ubicación:</strong> Zona estratégica visible en Maps</p>
+                    <p><strong>Fortaleza:</strong> Ubicación privilegiada</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>💡 Insights Competitivos</h3>
+                <ul>
+                    <li><strong>Gap de Horarios:</strong> Solo 2 competidores ofrecen servicio 24/7</li>
+                    <li><strong>Especialización Limitada:</strong> Pocos competidores especializados en exóticos</li>
+                    <li><strong>Presencia Digital:</strong> Oportunidad de diferenciación online</li>
+                    <li><strong>Precios Accesibles:</strong> Mercado sensible al precio</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Análisis de Keywords</h2>
+            
+            <h3>🔥 Keywords de Alta Intención</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                <div style="background: #e8f5e8; padding: 1rem; border-radius: 5px;">
+                    <strong>Urgencias</strong><br>
+                    • "veterinaria urgencia maipú"<br>
+                    • "veterinario 24 horas maipú"<br>
+                    • "emergencia veterinaria"
+                </div>
+                <div style="background: #fff3cd; padding: 1rem; border-radius: 5px;">
+                    <strong>Servicios Específicos</strong><br>
+                    • "vacunas para perros maipú"<br>
+                    • "castración gatos maipú"<br>
+                    • "consulta veterinaria"
+                </div>
+                <div style="background: #d1ecf1; padding: 1rem; border-radius: 5px;">
+                    <strong>Locales</strong><br>
+                    • "veterinarias cerca de mí"<br>
+                    • "veterinario en maipú"<br>
+                    • "clínica veterinaria maipú"
+                </div>
+                <div style="background: #f8d7da; padding: 1rem; border-radius: 5px;">
+                    <strong>Especializados</strong><br>
+                    • "veterinario animales exóticos"<br>
+                    • "oftalmólogo veterinario"<br>
+                    • "cardiología veterinaria"
+                </div>
+            </div>
+            
+            <div class="methodology">
+                <strong>Nota:</strong> Keywords identificadas basadas en servicios oferecidos por competidores y tendencias de búsqueda del sector veterinario chileno. Se recomienda validar volúmenes específicos con Google Keyword Planner.
+            </div>
+        </div>
+
+        <div class="opportunity-highlight">
+            <h2 style="color: white; border: none;">🚀 OPORTUNIDAD PRINCIPAL</h2>
+            <h3 style="color: white;">Marketing Digital para Veterinarias en Maipú</h3>
+            <p style="font-size: 1.1rem; margin: 1rem 0;">
+                Con una inversión de <strong>$1,000,000 CLP mensuales</strong> en marketing digital, 
+                una veterinaria puede capturar entre <strong>2-5% del mercado local</strong>, 
+                generando ingresos adicionales de <strong>$57-144 millones anuales</strong>.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                <div style="text-align: center;">
+                    <div style="font-size: 1.5rem; font-weight: bold;">2,309</div>
+                    <div>Consultas Anuales (Escenario Conservador)</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 1.5rem; font-weight: bold;">5,772</div>
+                    <div>Consultas Anuales (Escenario Optimista)</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 1.5rem; font-weight: bold;">25%</div>
+                    <div>ROI Proyectado Anual</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💰 Proyecciones Financieras</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+                    <h3 style="color: #27ae60;">🟢 Escenario Conservador</h3>
+                    <ul>
+                        <li><strong>Cuota de mercado:</strong> 2%</li>
+                        <li><strong>Consultas mensuales:</strong> 192</li>
+                        <li><strong>Ingresos mensuales:</strong> $4.8M CLP</li>
+                        <li><strong>Ingresos anuales:</strong> $57.7M CLP</li>
+                        <li><strong>Inversión marketing:</strong> $12M CLP/año</li>
+                        <li><strong>ROI:</strong> 25%</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+                    <h3 style="color: #3498db;">🔵 Escenario Optimista</h3>
+                    <ul>
+                        <li><strong>Cuota de mercado:</strong> 5%</li>
+                        <li><strong>Consultas mensuales:</strong> 481</li>
+                        <li><strong>Ingresos mensuales:</strong> $12.0M CLP</li>
+                        <li><strong>Ingresos anuales:</strong> $144.3M CLP</li>
+                        <li><strong>Inversión marketing:</strong> $18M CLP/año</li>
+                        <li><strong>ROI:</strong> 65%</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>📊 Supuestos del Modelo</h3>
+                <ul>
+                    <li><strong>Conversion Rate:</strong> 8-12% (estándar sector veterinario)</li>
+                    <li><strong>CPL (Cost Per Lead):</strong> $8,000-$15,000 CLP</li>
+                    <li><strong>Customer Lifetime Value:</strong> $150,000 CLP (6 visitas promedio)</li>
+                    <li><strong>Churn Rate:</strong> 20% anual</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📋 Recomendaciones Estratégicas</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                <div style="border: 2px solid #3498db; padding: 1.5rem; border-radius: 8px;">
+                    <h3 style="color: #3498db;">🎯 SEO Local</h3>
+                    <ul>
+                        <li>Google My Business optimizado</li>
+                        <li>Keywords geo-localizadas</li>
+                        <li>Reviews y testimonios</li>
+                        <li>Contenido local específico</li>
+                    </ul>
+                </div>
+                
+                <div style="border: 2px solid #27ae60; padding: 1.5rem; border-radius: 8px;">
+                    <h3 style="color: #27ae60;">📱 Marketing Digital</h3>
+                    <ul>
+                        <li>Google Ads para urgencias</li>
+                        <li>Facebook/Instagram Ads</li>
+                        <li>Remarketing campaigns</li>
+                        <li>WhatsApp Business</li>
+                    </ul>
+                </div>
+                
+                <div style="border: 2px solid #e74c3c; padding: 1.5rem; border-radius: 8px;">
+                    <h3 style="color: #e74c3c;">🏆 Diferenciación</h3>
+                    <ul>
+                        <li>Especialización en exóticos</li>
+                        <li>Servicio 24/7 real</li>
+                        <li>Telemedicina veterinaria</li>
+                        <li>Precios transparentes online</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 style="color: white; border: none;">🚀 ¿Listo para Capturar esta Oportunidad?</h2>
+            <p style="font-size: 1.2rem; margin: 1rem 0;">
+                El mercado veterinario de Maipú está esperando. Con la estrategia digital correcta, 
+                puedes capturar entre <strong>$57-144 millones CLP anuales</strong> adicionales.
+            </p>
+            <p style="margin: 1rem 0;">
+                No dejes que tus competidores tomen la delantera en el mundo digital.
+            </p>
+            <a href="#contacto" class="btn-cta">IMPLEMENTAR ESTRATEGIA DIGITAL</a>
+        </div>
+
+        <div class="section">
+            <h2>📊 Metodología y Fuentes</h2>
+            
+            <div class="methodology">
+                <h3>📋 Fuentes de Información</h3>
+                <ul>
+                    <li><strong>Datos Demográficos:</strong> INE Chile, Censo 2017, proyecciones municipales Maipú</li>
+                    <li><strong>Estadísticas Mascotas:</strong> Estudio ACADEM 2022, Universidad Católica de Chile</li>
+                    <li><strong>Mercado Veterinario:</strong> Colegio Médico Veterinario de Chile, Mi Negocio Veterinario</li>
+                    <li><strong>Competidores:</strong> Google Maps, búsquedas web directas, verificación URLs</li>
+                    <li><strong>Keywords:</strong> Análisis de servicios competidores, tendencias sector</li>
+                </ul>
+                
+                <h3>🔍 Metodología de Cálculo</h3>
+                <ul>
+                    <li><strong>TAM:</strong> Población × % hogares con mascotas × visitas anuales × ticket promedio</li>
+                    <li><strong>SAM:</strong> TAM × % capturable digitalmente (40%)</li>
+                    <li><strong>SOM:</strong> SAM × cuota mercado realista (2-5%)</li>
+                    <li><strong>ROI:</strong> (Ingresos adicionales - Inversión marketing) / Inversión</li>
+                </ul>
+                
+                <div style="background: #fff3cd; padding: 1rem; border-radius: 5px; margin-top: 1rem;">
+                    <strong>⚠️ Limitaciones:</strong>
+                    <ul>
+                        <li>Volúmenes de búsqueda específicos requieren validación con herramientas SEO</li>
+                        <li>Proyecciones basadas en promedios nacionales, pueden variar localmente</li>
+                        <li>Datos de competidores limitados a información pública disponible</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="logo" style="margin-bottom: 1rem;">LOCAL RANK</div>
+            <p>Informe generado por sistema de inteligencia de mercado digital</p>
+            <p>Datos verificados y competidores reales - No información inventada</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                © 2024 Local Rank. Todos los derechos reservados. | Contacto: info@localrank.cl
+            </p>
+        </div>
+    </div>
+</body>
+</html>

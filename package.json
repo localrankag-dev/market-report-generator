@@ -1,0 +1,35 @@
+{
+  "name": "market-report-generator",
+  "version": "1.0.0",
+  "description": "Sistema automatizado de generación de informes de mercado digital",
+  "main": "api/generate-market-report.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Build successful'",
+    "start": "echo 'Use vercel dev for local development'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "market-report",
+    "digital-marketing",
+    "seo",
+    "competitive-analysis",
+    "business-intelligence"
+  ],
+  "author": "LOCAL RANK",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/localrank/market-report-generator.git"
+  },
+  "homepage": "https://market-report-generator.vercel.app"
+}
