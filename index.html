@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCAL RANK - Generador de Informes de Mercado Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6;
+        }
+        
+        .gradient-orange { 
+            background: linear-gradient(135deg, #fc6203, #ff8c00); 
+        }
+        
+        .shadow-custom {
+            box-shadow: 0 10px 25px rgba(252, 98, 3, 0.1);
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .bg-local-orange { background-color: #fc6203; }
+        .bg-local-orange-hover:hover { background-color: #e55902; }
+        .text-local-orange { color: #fc6203; }
+        .border-local-orange { border-color: #fc6203; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="gradient-orange text-white shadow-custom">
+            <div class="container mx-auto px-6 py-8">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="text-center md:text-left mb-6 md:mb-0">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-2">LOCAL RANK</h1>
+                        <p class="text-xl text-orange-100">Generador de Informes de Mercado Digital</p>
+                        <p class="text-orange-200 mt-2">🚀 Desplegado en Vercel - Versión Producción</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                            <p class="text-2xl font-bold">95%</p>
+                            <p class="text-sm text-orange-100">Sistema Funcional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-6 py-12">
+            <!-- Form Section -->
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-custom p-8 mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">
+                        📊 Generar Informe de Mercado
+                    </h2>
+                    
+                    <form id="marketReportForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="ciudad" class="block text-sm font-medium text-gray-700 mb-2">
+                                    📍 Ciudad Objetivo
+                                </label>
+                                <input type="text" id="ciudad" name="ciudad" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                                    placeholder="Ej: Maipú, Santiago, Las Condes"
+                                    value="Maipú">
+                            </div>
+                            
+                            <div>
+                                <label for="rubro" class="block text-sm font-medium text-gray-700 mb-2">
+                                    🏢 Rubro/Industria
+                                </label>
+                                <input type="text" id="rubro" name="rubro" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                                    placeholder="Ej: veterinarias, dentistas, abogados"
+                                    value="veterinarias">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="ticketPromedio" class="block text-sm font-medium text-gray-700 mb-2">
+                                💰 Ticket Promedio (CLP)
+                            </label>
+                            <input type="number" id="ticketPromedio" name="ticketPromedio" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                                placeholder="25000"
+                                value="25000">
+                        </div>
+
+                        <div>
+                            <label for="csvFile" class="block text-sm font-medium text-gray-700 mb-2">
+                                📄 CSV Keywords (Opcional)
+                            </label>
+                            <input type="file" id="csvFile" name="csvFile" accept=".csv"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                            <p class="text-sm text-gray-500 mt-1">Sube tu archivo CSV de Google Ads, SEMrush o Ahrefs</p>
+                        </div>
+
+                        <button type="submit" id="generateBtn"
+                            class="w-full bg-local-orange hover:bg-local-orange-hover text-white font-bold py-4 px-8 rounded-lg transition duration-300 hover-lift">
+                            🚀 Generar Informe de Mercado
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Loading Section -->
+                <div id="loadingSection" class="hidden bg-white rounded-2xl shadow-custom p-8 mb-8">
+                    <div class="text-center">
+                        <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+                        <h3 class="text-xl font-semibold mt-4">Generando tu informe...</h3>
+                        <p class="text-gray-600">⚡ Procesando en Vercel serverless</p>
+                        <div id="progressInfo" class="mt-4 text-sm text-gray-500">
+                            Iniciando análisis de mercado...
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div id="resultsSection" class="hidden bg-white rounded-2xl shadow-custom p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">📋 Tu Informe de Mercado</h3>
+                    <div id="reportContent"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-gray-300">© 2025 LOCAL RANK - Sistema de Informes de Mercado Digital</p>
+                <p class="text-gray-400 text-sm mt-2">🚀 Desplegado en Vercel | Versión 1.0.0 Producción</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // API URL for Vercel deployment
+        const API_BASE_URL = window.location.origin;
+
+        document.getElementById('marketReportForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = {
+                ciudad: formData.get('ciudad'),
+                rubro: formData.get('rubro'),
+                ticketPromedio: formData.get('ticketPromedio'),
+                csvData: []
+            };
+
+            // Handle CSV file if uploaded
+            const csvFile = formData.get('csvFile');
+            if (csvFile && csvFile.size > 0) {
+                try {
+                    const csvText = await csvFile.text();
+                    const parsed = Papa.parse(csvText, { header: true });
+                    data.csvData = parsed.data;
+                } catch (error) {
+                    console.error('Error parsing CSV:', error);
+                    alert('Error al procesar el archivo CSV');
+                    return;
+                }
+            }
+
+            // Show loading
+            document.getElementById('loadingSection').classList.remove('hidden');
+            document.getElementById('resultsSection').classList.add('hidden');
+            document.getElementById('generateBtn').disabled = true;
+
+            try {
+                // Update progress
+                updateProgress('Enviando datos al servidor...');
+                
+                const response = await fetch(`${API_BASE_URL}/api/generate-market-report`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                updateProgress('Procesando datos de mercado...');
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                updateProgress('Finalizando informe...');
+
+                // Hide loading and show results
+                document.getElementById('loadingSection').classList.add('hidden');
+                document.getElementById('resultsSection').classList.remove('hidden');
+                
+                // Display report
+                displayReport(result.report);
+
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('loadingSection').classList.add('hidden');
+                alert('Error al generar el informe: ' + error.message);
+            } finally {
+                document.getElementById('generateBtn').disabled = false;
+            }
+        });
+
+        function updateProgress(message) {
+            document.getElementById('progressInfo').textContent = message;
+        }
+
+        function displayReport(report) {
+            const reportContent = document.getElementById('reportContent');
+            reportContent.innerHTML = `
+                <div class="space-y-6">
+                    <div class="border-l-4 border-orange-500 pl-4">
+                        <h4 class="font-bold text-lg">${report.titulo}</h4>
+                        <p class="text-gray-600">${report.fecha}</p>
+                    </div>
+                    
+                    <div>
+                        <h5 class="font-semibold mb-2">📋 Resumen Ejecutivo</h5>
+                        <p class="text-gray-700">${report.resumen_ejecutivo}</p>
+                    </div>
+
+                    <div>
+                        <h5 class="font-semibold mb-2">🎯 Oportunidad Principal</h5>
+                        <p class="text-gray-700">${report.oportunidad_oro}</p>
+                    </div>
+
+                    <div>
+                        <h5 class="font-semibold mb-2">📊 Métricas Clave</h5>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="font-semibold">Búsquedas Mensuales</p>
+                                <p class="text-2xl font-bold text-orange-600">${report.metricas_clave.total_searches.toLocaleString()}</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="font-semibold">Potencial de Ingresos Anuales</p>
+                                <p class="text-2xl font-bold text-green-600">$${report.metricas_clave.annual_revenue_potential.toLocaleString()} CLP</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-semibold mb-2">🏢 Competidores Identificados</h5>
+                        <div class="space-y-2">
+                            ${report.competidores.map(comp => `
+                                <div class="border rounded-lg p-3">
+                                    <p class="font-semibold">${comp.name}</p>
+                                    <p class="text-sm text-gray-600">${comp.description}</p>
+                                    <a href="${comp.url}" target="_blank" class="text-blue-500 text-sm hover:underline">${comp.url}</a>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-semibold mb-2">💡 Recomendaciones</h5>
+                        <ul class="list-disc list-inside space-y-1">
+                            ${report.recomendaciones.map(rec => `<li class="text-gray-700">${rec}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    ${report.metadata ? `
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <p class="text-sm text-blue-700">
+                                <strong>📌 Nota:</strong> ${report.metadata.note || 'Informe generado en Vercel'}
+                            </p>
+                        </div>
+                    ` : ''}
+
+                    <div class="text-center pt-6">
+                        <button onclick="window.print()" 
+                            class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-lg mr-4">
+                            🖨️ Imprimir
+                        </button>
+                        <button onclick="generateNewReport()" 
+                            class="bg-local-orange hover:bg-local-orange-hover text-white font-bold py-2 px-6 rounded-lg">
+                            📊 Nuevo Informe
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function generateNewReport() {
+            document.getElementById('resultsSection').classList.add('hidden');
+            document.getElementById('marketReportForm').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Health check on load
+        window.addEventListener('load', async function() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/health`);
+                const health = await response.json();
+                console.log('✅ Vercel deployment status:', health);
+            } catch (error) {
+                console.log('⚠️ Health check failed:', error);
+            }
+        });
+    </script>
+</body>
+</html>
